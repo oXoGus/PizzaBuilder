@@ -14,7 +14,7 @@ public class Main extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			BorderPane root = FXMLLoader.load(getClass().getResource("menu.fxml"));
+			BorderPane root = FXMLLoader.load(getClass().getResource("menu_mobile.fxml"));
 
 			// on met la taille de la fenêtre pour qu'elle prenne tout l'écran
 			Rectangle2D screenBounds = Screen.getPrimary().getVisualBounds();
@@ -29,7 +29,7 @@ public class Main extends Application {
 			Scene scene = new Scene(root);
 			scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene);
-			primaryStage.setTitle("PizzaBuilder - menu");
+			primaryStage.setTitle("PizzaBuilder - menu_mobile");
 			primaryStage.show();
 			
 		} catch(Exception e) {
