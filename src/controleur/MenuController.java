@@ -1,5 +1,6 @@
 package controleur;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -20,31 +21,30 @@ public class MenuController {
 
     @FXML
     private void initialize() {
-        // Initialisation si nécessaire
+        btnMyPizza.setOnAction(e -> handleMyPizza(e));
+        btnBuildPizza.setOnAction(e -> handleBuildPizza(e));
+        btnOrderPizza.setOnAction(e -> handleOrderPizza(e));
+        btnQuit.setOnAction(e -> handleQuit(e));
     }
 
-    @FXML
-    private void handleMyPizza(ActionEvent event) {
+    public void handleMyPizza(ActionEvent event) {
         System.out.println("My Pizza clicked");
         // Logique ou navigation vers la vue "My Pizza"
     }
 
-    @FXML
     private void handleBuildPizza(ActionEvent event) {
         System.out.println("Build a pizza clicked");
         // Logique ou navigation vers la construction de pizza
     }
 
-    @FXML
     private void handleOrderPizza(ActionEvent event) {
         System.out.println("Order pizza clicked");
         // Logique ou passage à la commande
     }
 
-    @FXML
     private void handleQuit(ActionEvent event) {
         System.out.println("Quit clicked");
         // Ferme l'application
-        System.exit(0);
+        Platform.exit();
     }
 }
