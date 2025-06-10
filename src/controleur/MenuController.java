@@ -40,7 +40,7 @@ public class MenuController {
     }
 
     @FXML
-    void Quit(ActionEvent event) {
+    public void Quit(ActionEvent event) {
         System.exit(0);
     }
 }
