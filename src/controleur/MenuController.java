@@ -42,9 +42,7 @@ public class MenuController {
     }
 
     @FXML
-    private void handleQuit(ActionEvent event) {
-        System.out.println("Quit clicked");
-        // Ferme l'application
+    void Quit(ActionEvent event) {
         System.exit(0);
     }
 }
