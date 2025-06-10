@@ -15,10 +15,10 @@
                 <Insets bottom="10.0" left="50.0" right="50.0" top="100.0" />
             </padding>
 
-            <Button fx:id="btnMyPizza" alignment="TOP_CENTER" onAction="#btnMyPizza" prefHeight="31.0" prefWidth="418.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="My Pizza" />
-            <Button fx:id="btnBuildPizza" onAction="#btnBuildPizza" prefHeight="31.0" prefWidth="415.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Build a pizza" />
-            <Button fx:id="btnOrderPizza" onAction="#btnOrderPizza" prefHeight="31.0" prefWidth="414.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Order pizza" />
-            <Button fx:id="btnQuit" onAction="#btnQuit" prefHeight="58.0" prefWidth="414.0" style="-fx-background-color: #FF9999; -fx-font-size: 40px;" text="Quit" />
+            <Button fx:id="btnMyPizza" alignment="TOP_CENTER" onAction="#btnMyPizza" prefHeight="31.0" prefWidth="418.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Mes Pizzas" />
+            <Button fx:id="btnBuildPizza" onAction="#btnBuildPizza" prefHeight="31.0" prefWidth="415.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Créer une pizza" />
+            <Button fx:id="btnOrderPizza" onAction="#btnOrderPizza" prefHeight="31.0" prefWidth="414.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Commander" />
+            <Button fx:id="btnQuit" onAction="#btnQuit" prefHeight="58.0" prefWidth="414.0" style="-fx-background-color: #FF9999; -fx-font-size: 40px;" text="Quitter" />
             <VBox.margin>
                <Insets />
             </VBox.margin>
