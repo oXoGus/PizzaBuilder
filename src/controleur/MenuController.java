@@ -32,7 +32,7 @@ public class MenuController {
 
     @FXML
     private void btnBuildPizza(ActionEvent event) {
-        nav.goTo(btnBuildPizza, "/vue/BuilderPizza.fxml");
+        nav.goTo(btnBuildPizza, "/vue/BuildPizza.fxml");
     }   
 
     @FXML
