@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class MenuController {
+    NavAgent nav = new NavAgent();
 
     @FXML
     private Button btnMyPizza;
@@ -23,24 +24,25 @@ public class MenuController {
     private void initialize() {
         // Initialisation si nécessaire
     }
-
-    public void handleMyPizza(ActionEvent event) {
+    @FXML
+    public void btnMyPizza(ActionEvent event) {
         System.out.println("My Pizza clicked");
         // Logique ou navigation vers la vue "My Pizza"
     }
 
-    private void handleBuildPizza(ActionEvent event) {
-        System.out.println("Build a pizza clicked");
-        // Logique ou navigation vers la construction de pizza
-    }
-
-    private void handleOrderPizza(ActionEvent event) {
-        System.out.println("Order pizza clicked");
-        // Logique ou passage à la commande
-    }
+    @FXML
+    private void btnBuildPizza(ActionEvent event) {
+        nav.goTo(btnBuildPizza, "/vue/BuilderPizza.fxml");
+    }   
 
     @FXML
-    void Quit(ActionEvent event) {
+    private void btnOrderPizza(ActionEvent event) {
+        nav.goTo(btnOrderPizza, "/vue/order.fxml");
+    }
+
+
+    @FXML
+    void btnQuit(ActionEvent event) {
         System.exit(0);
     }
 }
