@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #424242;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="controleur.MenuController">
+<BorderPane prefHeight="1080.0" prefWidth="1920.0" style="-fx-background-color: #424242;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
 
     <center>
         <VBox alignment="TOP_CENTER" spacing="15.0" BorderPane.alignment="CENTER">
@@ -15,10 +15,10 @@
                 <Insets bottom="10.0" left="50.0" right="50.0" top="100.0" />
             </padding>
 
-            <Button fx:id="btnMyPizza" alignment="TOP_CENTER" prefHeight="31.0" prefWidth="418.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="My Pizza" />
+            <Button fx:id="btnMyPizza" alignment="TOP_CENTER" prefHeight="31.0" prefWidth="418.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="My Pizza">
             <VBox.margin>
                <Insets />
-            </VBox.margin>
+            </VBox.margin></Button>
             <Button fx:id="btnBuildPizza" prefHeight="31.0" prefWidth="415.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Build a pizza" />
             <Button fx:id="btnOrderPizza" prefHeight="31.0" prefWidth="414.0" style="-fx-background-color: #FFC880; -fx-font-size: 40px;" text="Order pizza" />
             <Button fx:id="btnQuit" prefHeight="58.0" prefWidth="414.0" style="-fx-background-color: #FF9999; -fx-font-size: 40px;" text="Quit" />

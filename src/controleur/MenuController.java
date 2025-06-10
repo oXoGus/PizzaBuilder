@@ -21,10 +21,7 @@ public class MenuController {
 
     @FXML
     private void initialize() {
-        btnMyPizza.setOnAction(e -> handleMyPizza(e));
-        btnBuildPizza.setOnAction(e -> handleBuildPizza(e));
-        btnOrderPizza.setOnAction(e -> handleOrderPizza(e));
-        btnQuit.setOnAction(e -> handleQuit(e));
+        // Initialisation si nécessaire
     }
 
     public void handleMyPizza(ActionEvent event) {
@@ -42,9 +39,8 @@ public class MenuController {
         // Logique ou passage à la commande
     }
 
-    private void handleQuit(ActionEvent event) {
-        System.out.println("Quit clicked");
-        // Ferme l'application
-        Platform.exit();
+    @FXML
+    void Quit(ActionEvent event) {
+        System.exit(0);
     }
 }
