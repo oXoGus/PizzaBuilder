@@ -4,7 +4,6 @@ import javafx.animation.TranslateTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -212,22 +211,17 @@ public class TendancesController implements Initializable {
 
     @FXML
     private void navigateToCreatePizza(ActionEvent event) {
-        System.out.println("Navigating to Create Pizza page");
-        // TODO: Implement navigation to Create Pizza page
-        // Example: SceneManager.switchTo("CreatePizza.fxml");
+        nav.goTo(menuMain, "/vue/BuildPizza.fxml");
     }
 
     @FXML
     private void navigateToMyPizzas(ActionEvent event) {
-        System.out.println("Navigating to My Pizzas page");
-        // TODO: Implement navigation to My Pizzas page
-        // Example: SceneManager.switchTo("MyPizzas.fxml");
+        nav.goTo(menuMain, "/vue/commande.fxml");
     }
 
     @FXML
     private void navigateToTrending(ActionEvent event) {
-        System.out.println("Already on Trending page");
-        // Current page - maybe refresh or show notification
+        nav.goTo(menuMain, "/vue/order.fxml");
     }
 
     // ==================

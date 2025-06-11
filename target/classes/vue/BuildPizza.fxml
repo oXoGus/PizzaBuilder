@@ -6,19 +6,41 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.TilePane?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="root" prefHeight="768" prefWidth="1365" style="-fx-background-color: #3d3d3d;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1">
+<BorderPane fx:id="root" prefHeight="768" prefWidth="1365" style="-fx-background-color: #3d3d3d;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controleur.BuildPizzaController">
    <top>
-        <HBox prefHeight="64.0" prefWidth="1365.0" spacing="10" style="-fx-padding: 10 20 10 20; -fx-background-color: #3d3d3d;" BorderPane.alignment="CENTER">
-            <Button style="-fx-font-size: 18px;" text="🏠" />
-            <TextField promptText="nommez votre pizza..." style="-fx-pref-width: 500px;" />
+        <HBox alignment="CENTER_LEFT" prefHeight="60.0" spacing="20.0" style="-fx-background-color: #f0f0f0; -fx-border-color: #e0e0e0; -fx-border-width: 0 0 1 0;">
+            <padding>
+                <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+            </padding>
+
+            <!-- Hamburger Menu Button -->
+            <Button fx:id="hamburgerButton" onAction="#toggleMenu" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-font-size: 18px;" text="☰" />
+
+            <!-- Pizza Builder Title -->
+            <Label style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #333333;" text="Pizza Builder" />
+
+            <!-- Spacer -->
+            <Region HBox.hgrow="ALWAYS" />
+
+            <!-- Search Bar -->
+            <TextField fx:id="searchField" prefWidth="400.0" promptText="Rechercher votre pizza de rêve" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-padding: 8 15 8 15;" />
+
+            <!-- Search Button -->
+            <Button fx:id="searchButton" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-background-radius: 20; -fx-padding: 8 15 8 15;" text="🔍" />
+
+            <!-- Right side buttons -->
+            <Button fx:id="loginButton" onAction="#showLogin" style="-fx-background-color: #9E9E9E; -fx-text-fill: white; -fx-background-radius: 15; -fx-padding: 8 20 8 20;" text="connexion" />
+
+            <Button fx:id="signupButton" onAction="#showSignup" style="-fx-background-color: transparent; -fx-text-fill: #333333; -fx-border-color: transparent;" text="créer un compte" />
         </HBox>
-   </top>
+    </top>
    <center>
       <HBox prefHeight="100.0" prefWidth="200.0" spacing="1.0" BorderPane.alignment="CENTER">
          <children>
@@ -32,14 +54,9 @@
                      </VBox.margin>
                   </Separator>
                       <TilePane hgap="5" vgap="5">
-                          <Button text="■" />
-                          <Button text="●" />
-                          <Button text="▲" />
-                          <Button text="❤" />
-                          <Button text="★" />
-                          <Button text="⬟" />
-                          <Button text="⬡" />
-                          <Button text="+" />
+                          <Button fx:id="baseCircleBtn" text="●" />
+                          <Button fx:id="baseRectBtn" text="■" />
+                          <Button fx:id="baseTriBtn" text="▲" />
                       </TilePane>
                   </VBox>
       
@@ -51,9 +68,9 @@
                         <Insets bottom="3.0" />
                      </VBox.margin>
                   </Separator>
-                  <ScrollPane prefHeight="53.0" prefWidth="221.0" style="-fx-background-color: #3d3d3d;" VBox.vgrow="NEVER">
+                  <ScrollPane minHeight="60.0" prefHeight="53.0" prefWidth="221.0" style="-fx-background-color: #3d3d3d; -fx-background: #3d3d3d;" VBox.vgrow="NEVER">
                      <content>
-                        <VBox prefHeight="201.0" prefWidth="203.0" style="-fx-background-color: #3d3d3d;" />
+                        <VBox prefHeight="40.0" prefWidth="218.0" style="-fx-background-color: #3d3d3d;" />
                      </content>
                   </ScrollPane>
                   </VBox>
@@ -66,9 +83,9 @@
                         <Insets bottom="3.0" />
                      </VBox.margin>
                   </Separator>
-                  <ScrollPane prefHeight="67.0" prefWidth="218.0" style="-fx-background-color: #3d3d3d;" VBox.vgrow="NEVER">
+                  <ScrollPane minHeight="60.0" prefHeight="67.0" prefWidth="218.0" style="-fx-background-color: #3d3d3d; -fx-background: #3d3d3d;" VBox.vgrow="NEVER">
                      <content>
-                        <VBox fx:id="sauceSelectContainer" prefHeight="206.0" prefWidth="203.0" style="-fx-background-color: #3d3d3d;" />
+                        <VBox fx:id="sauceSelectContainer" prefHeight="24.0" prefWidth="218.0" style="-fx-background-color: #3d3d3d;" />
                      </content>
                   </ScrollPane>
                   </VBox>
@@ -81,29 +98,29 @@
                         <Insets bottom="3.0" />
                      </VBox.margin>
                   </Separator>
-                  <ScrollPane prefHeight="367.0" prefWidth="220.0" style="-fx-background-color: #3d3d3d;" VBox.vgrow="ALWAYS">
+                  <ScrollPane prefHeight="645.0" prefWidth="220.0" style="-fx-background-color: #3d3d3d; -fx-background: #3d3d3d;" VBox.vgrow="ALWAYS">
                      <content>
-                        <VBox fx:id="ingredientsSelectContainer" prefHeight="428.0" prefWidth="203.0" style="-fx-background-color: #3d3d3d;" />
+                        <VBox fx:id="ingredientsSelectContainer" prefHeight="34.0" prefWidth="218.0" style="-fx-background-color: #3d3d3d;" />
                      </content>
                   </ScrollPane>
                   </VBox>
               </VBox>
-              <StackPane fx:id="pizzaContainer" prefHeight="675.0" prefWidth="878.0" style="-fx-background-color: #a0a0a0;" HBox.hgrow="ALWAYS">
+              <AnchorPane fx:id="pizzaContainer" maxWidth="-Infinity" prefHeight="675.0" prefWidth="870.0" style="-fx-background-color: #a0a0a0;" HBox.hgrow="ALWAYS">
                <padding>
                   <Insets left="50.0" right="50.0" />
                </padding>
                   <!-- D'autres ImageView peuvent être ajoutés dynamiquement -->
-              </StackPane>
-              <VBox prefHeight="657.0" prefWidth="246.0" spacing="10.0" style="-fx-padding: 10 15 10 15; -fx-background-color: #3d3d3d;">
+              </AnchorPane>
+              <VBox prefHeight="657.0" prefWidth="246.0" spacing="10.0" style="-fx-padding: 10 15 10 15; -fx-background-color: #3d3d3d;" HBox.hgrow="ALWAYS">
                <VBox prefHeight="3.0" prefWidth="216.0">
                   <children>
                         <Label style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;" text="Ordre des ingrédients" />
                      <Separator />
                   </children>
                </VBox>
-               <ScrollPane prefHeight="514.0" prefWidth="216.0" style="-fx-background-color: #3d3d3d;">
+               <ScrollPane prefHeight="988.0" prefWidth="216.0" style="-fx-background-color: #3d3d3d; -fx-background: #3d3d3d;">
                   <content>
-                     <VBox prefHeight="588.0" prefWidth="198.0" style="-fx-background-color: #3d3d3d;" />
+                     <VBox prefHeight="47.0" prefWidth="198.0" style="-fx-background-color: #3d3d3d;" />
                   </content>
                </ScrollPane>
                   <VBox spacing="5" />
@@ -116,7 +133,7 @@
                </HBox>
                <VBox alignment="CENTER" prefHeight="32.0" prefWidth="216.0" spacing="10.0">
                   <children>
-                        <Button prefHeight="26.0" prefWidth="243.0" style="-fx-background-color: #f4c16b; -fx-text-fill: black;" text="Commander" />
+                        <Button fx:id="btnValidate" prefHeight="26.0" prefWidth="243.0" style="-fx-background-color: #f4c16b; -fx-text-fill: black;" text="Commander" />
                   </children>
                </VBox>
               </VBox>
@@ -126,4 +143,26 @@
          </padding>
       </HBox>
    </center>
+
+   <!-- Left Sidebar Menu (Initially Hidden) -->
+    <left>
+        <VBox fx:id="sidebarMenu" managed="false" prefWidth="250.0" spacing="10.0" style="-fx-background-color: white; -fx-border-color: #e0e0e0; -fx-border-width: 0 1 0 0;" visible="false">
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding>
+
+            <Button fx:id="menuMain" onAction="#navigateToMain" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-text-fill: #333333; -fx-alignment: center-left; -fx-font-size: 14px;" text="Retour au menu" />
+
+            <Button fx:id="menuCreatePizza" onAction="#navigateToCreatePizza" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-text-fill: #333333; -fx-alignment: center-left; -fx-font-size: 14px;" text="Créer ma pizza" />
+
+            <Button fx:id="menuMyPizzas" onAction="#navigateToMyPizzas" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-text-fill: #333333; -fx-alignment: center-left; -fx-font-size: 14px;" text="Mon panier" />
+
+            <Separator />
+
+            <Label style="-fx-font-weight: bold; -fx-text-fill: #666666;" text="Catégories" />
+
+            <Button fx:id="menuTrending" onAction="#navigateToTrending" prefHeight="40.0" prefWidth="210.0" style="-fx-background-color: #f0f0f0; -fx-text-fill: #333333; -fx-alignment: center-left; -fx-font-size: 14px;" text="Tendances" />
+
+        </VBox>
+    </left>
 </BorderPane>
